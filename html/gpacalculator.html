@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPA Calculator</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Ubuntu', sans-serif;
+        }
+        nav{
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        }
+
+        nav .nav-content{
+        height: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        }
+        nav .logo a{
+        font-weight: 500;
+        font-size: 35px;
+        color: #f3f3f3;
+        }
+
+        .nav-content .nav-links{
+        display: flex;
+        }
+        .nav-content .nav-links li{
+        list-style: none;
+        margin: 0 8px;
+        }
+        .nav-links li a{
+        color: #f4f4f4;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 10px 4px;
+
+        }
+        .nav-links li a:hover{
+        color:#fdb347;
+        }
+        
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: #f5f6f7;
+        }
+        
+        .header {
+            text-align: center;
+            text-transform: uppercase;
+            padding: 2px;
+            background-color: #0a0a23;
+            color: #fff;
+            border-bottom: 2px solid #fdb347;
+        }
+        
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 10px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            max-width: 350px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .gallery::after {
+            content: "";
+            width: 350px;
+        } 
+        
+
+        .footer-bottom{
+            /* background: #000; */
+            width: 100%;
+            /* padding: 20px; */
+            /* padding-bottom: 40px; */
+            text-align: center;
+            color: #fff;
+            padding: 12px;
+            background-color: #0a0a23;
+            color: #fff;
+            border-bottom: 1px solid #fdb347;
+        
+        }
+
+        #vmosh {
+            color: #f4f4f4b4;
+            
+        }
+
+        .intro{
+        width:100%;
+        height:30px;
+        }
+        .intro h1{
+        font-family:'Oswald', sans-serif;
+        letter-spacing:2px;
+        font-weight:normal;
+        font-size:14px;
+        color:black;
+        text-align:center;
+        margin-top:10px;
+        }
+        .intro a{
+        color:black;
+        font-weight:bold;
+        letter-spacing:0;
+        }
+        .intro img{
+        width:20px;
+        height:20px;
+        margin-left:5px;
+        margin-right:5px;
+        position:relative;
+        top:5px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0074a2;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        select, input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #0a0a23;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0074a2;
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #result span {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0074a2;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <div class="nav-content">
+              <div class="logo">
+                <a>GPA Calculator</a>
+              </div>
+              <ul class="nav-links">
+                <li><a href="index.html" target="_blank">Home</a></li>
+                <li><a href="html\registration.html" target="_blank">Registration</a></li>
+                <li><a href="html\results.html" target="_blank">Results</a></li>
+                <li><a onclick="no()">GPA Calculator</a></li>
+              </ul>
+            </div>
+        </nav>
+    </header>
+    <br>
+
+    <div class="container">
+        <h1>GPA Calculator</h1>
+        <form id="gpa-form">
+            <label for="grade">Mathematics:</label>
+            <select id="grade">
+                <option value="4.0">A+</option>
+                <option value="4.0">A</option>
+                <option value="3.7">A-</option>
+                <option value="3.3">B+</option>
+                <option value="3.0">B</option>
+                <option value="2.7">B-</option>
+                <option value="2.3">C+</option>
+                <option value="2.0">C</option>
+                <option value="1.7">C-</option>
+                <option value="1.3">D+</option>
+                <option value="1.0">D</option>
+                <option value="0.0">F</option>
+            </select>
+
+            <label for="grade">Programming Fundamentals:</label>
+            <select id="grade">
+                <option value="4.0">A+</option>
+                <option value="4.0">A</option>
+                <option value="3.7">A-</option>
+                <option value="3.3">B+</option>
+                <option value="3.0">B</option>
+                <option value="2.7">B-</option>
+                <option value="2.3">C+</option>
+                <option value="2.0">C</option>
+                <option value="1.7">C-</option>
+                <option value="1.3">D+</option>
+                <option value="1.0">D</option>
+                <option value="0.0">F</option>
+            </select>
+
+            <label for="grade">Electrical Fundamentals:</label>
+            <select id="grade">
+                <option value="4.0">A+</option>
+                <option value="4.0">A</option>
+                <option value="3.7">A-</option>
+                <option value="3.3">B+</option>
+                <option value="3.0">B</option>
+                <option value="2.7">B-</option>
+                <option value="2.3">C+</option>
+                <option value="2.0">C</option>
+                <option value="1.7">C-</option>
+                <option value="1.3">D+</option>
+                <option value="1.0">D</option>
+                <option value="0.0">F</option>
+            </select>
+
+            <label for="grade">Fluid Mechanics:</label>
+            <select id="grade">
+                <option value="4.0">A+</option>
+                <option value="4.0">A</option>
+                <option value="3.7">A-</option>
+                <option value="3.3">B+</option>
+                <option value="3.0">B</option>
+                <option value="2.7">B-</option>
+                <option value="2.3">C+</option>
+                <option value="2.0">C</option>
+                <option value="1.7">C-</option>
+                <option value="1.3">D+</option>
+                <option value="1.0">D</option>
+                <option value="0.0">F</option>
+            </select>
+
+            <label for="grade">Mechanics:</label>
+            <select id="grade">
+                <option value="4.0">A+</option>
+                <option value="4.0">A</option>
+                <option value="3.7">A-</option>
+                <option value="3.3">B+</option>
+                <option value="3.0">B</option>
+                <option value="2.7">B-</option>
+                <option value="2.3">C+</option>
+                <option value="2.0">C</option>
+                <option value="1.7">C-</option>
+                <option value="1.3">D+</option>
+                <option value="1.0">D</option>
+                <option value="0.0">F</option>
+            </select>
+
+            <label for="grade">Properties Of Materials:</label>
+            <select id="grade">
+                <option value="4.0">A+</option>
+                <option value="4.0">A</option>
+                <option value="3.7">A-</option>
+                <option value="3.3">B+</option>
+                <option value="3.0">B</option>
+                <option value="2.7">B-</option>
+                <option value="2.3">C+</option>
+                <option value="2.0">C</option>
+                <option value="1.7">C-</option>
+                <option value="1.3">D+</option>
+                <option value="1.0">D</option>
+                <option value="0.0">F</option>
+            </select>
+
+            <button type="button" id="add-button">Calculate</button>
+        </form>
+
+        <div id="result">
+            <p>Your GPA: <span id="gpa">0.00</span></p>
+        </div>
+    </div>
+    <br>
+    <footer>
+        <div class="footer-bottom">
+            <p>copyrights &copy; <a href="https://www.linkedin.com/in/vimosh-vasanthakumar-072068293/" target="_blank" id="vmosh">Vimosh V</a>  </p>
+        </div>
+    
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("gpa-form");
+            const gradeMath = document.querySelectorAll('#grade')[0];
+            const gradeProgramming = document.querySelectorAll('#grade')[1];
+            const gradeTrical = document.querySelectorAll('#grade')[2];
+            const gfluid = document.querySelectorAll('#grade')[3];
+            const gmech = document.querySelectorAll('#grade')[4];
+            const gmat = document.querySelectorAll('#grade')[5];
+            
+            const addButton = document.getElementById("add-button");
+            const gpaDisplay = document.getElementById("gpa");
+    
+            // Set default credits for subjects
+            const creditsMath = 3;
+            const creditsProgramming = 3;
+            const creditsFluid = 2
+            const creditsMech = 2
+            const creditsTrical = 2
+            const creditsMaterial = 2
+
+    
+            let totalCredits = 0;
+            let totalPoints = 0;
+    
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+            });
+    
+            addButton.addEventListener("click", function () {
+                const gradeValueMath = parseFloat(gradeMath.value);
+                const gradeValueProgramming = parseFloat(gradeProgramming.value);
+                const trical = parseFloat(gradeTrical.value)
+                const fluid = parseFloat(gfluid.value)
+                const mech = parseFloat(gmech.value)
+                const mat = parseFloat(gmat.value)
+                console.log(gradeValueMath)
+                console.log(gradeValueProgramming)
+                console.log(trical)
+                console.log(fluid)
+                console.log(mech)
+                console.log(mat)
+    
+
+                totalCredits = creditsMath + creditsProgramming + creditsFluid +creditsMaterial + creditsMech +creditsTrical;
+                console.log(totalCredits)
+                totalPoints = (creditsMath * gradeValueMath) + (creditsProgramming * gradeValueProgramming) + (creditsFluid * fluid ) + (creditsMaterial * mat ) + (creditsMech * mech )+(creditsTrical * trical );
+                console.log(totalPoints)
+    
+                const currentGPA = (totalPoints / totalCredits).toFixed(2);
+                console.log(currentGPA)
+                gpaDisplay.textContent = currentGPA;
+            });
+        });
+
+        function no() {
+            alert("Now you are in GPA calculator page...!")
+        }
+    </script>
+    
+</body>
+</html>
