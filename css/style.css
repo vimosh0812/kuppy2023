@@ -199,3 +199,76 @@ nav .logo a{
 .cont .vir {
   color: blue;
 } 
+
+/* new */
+
+input[type="text"] {
+
+  margin: 10px 0;
+}
+input, button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+
+button {
+  background-color: #0a0a23;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0074a2;
+}
+
+#result {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+}
+#result span {
+  font-weight: bold;
+  color: #0074a2;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#newh1 {
+  text-align: center;
+  color: #0a0a23;
+}
+
+#errorMessage {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin: 10px 0; 
+  font-weight: lighter;
+  color: #a2000b;
+  text-align: center;
+}
+/* new */
