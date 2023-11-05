@@ -24,6 +24,21 @@
         </div>
       </nav>
   </header>
+  <br>
+  <h1 class="heading">RESULTS</h1>
+  <br>
+  <div class="container">
+    <h1 id="newh1">Maths Results</h1>
+    <input type="text" id="indexInput" placeholder="Enter index number">
+    <button id="submitButton">Submit</button>
+  <div id="result">
+        <p><strong>Index:</strong> <span id="resultIndex"></span></p>
+        <p><strong>Name:</strong> <span id="resultName"></span></p>
+        <p><strong>Score:</strong> <span id="resultScore"></span></p>
+        <p><strong>Rank:</strong> <span id="resultRank"></span></p>
+  </div>
+    <div id="errorMessage">Enter the valid index number</div>        
+  </div>
   <div class="time-table group">
     <h1 class="heading">
         Time Table
@@ -105,6 +120,55 @@
 
 </footer>
 <script>
+    const resultsData = [
+            { index: "22002", name: "S.Saran", score: "", rank: "" },
+            { index: "22003", name: "S.Subeetshan", score: "", rank: "" },
+            { index: "22004", name: "K. Birajith", score: "", rank: "" },
+            { index: "22005", name: "M.Thusanth", score: "", rank: "" },
+            { index: "22006", name: "L.Jadsiha ", score: "", rank: "" },
+            { index: "22007", name: "S.Kamsan ", score: "", rank: "" },
+            { index: "22008", name: "J.Sarujan", score: "", rank: "" },
+            { index: "22009", name: "AM.Hamees", score: "", rank: "" },
+            { index: "22010", name: "S.Sarajana", score: "", rank: "" },
+            { index: "22011", name: "F.Ajey Abishake", score: "", rank: "" },
+            { index: "22012", name: "M.S.M.Shazan", score: "", rank: "" },
+            { index: "22013", name: "S.Dilakshan", score: "", rank: "" },
+            { index: "22014", name: "J.Thadshakan ", score: "", rank: "" },
+            { index: "22015", name: "G.Lakshika", score: "", rank: "" },
+            { index: "22017", name: "U.Saturshana", score: "", rank: "" },
+            { index: "22018", name: "Kr.Hasni Zihar", score: "", rank: "" },
+            { index: "22019", name: "D.Demekshan", score: "", rank: "" },
+            { index: "22020", name: "R.Sajiv", score: "", rank: "" },
+        ];
+
+        const indexInput = document.getElementById("indexInput");
+        const submitButton = document.getElementById("submitButton");
+        const resultContainer = document.getElementById("result");
+        const resultIndex = document.getElementById("resultIndex");
+        const resultName = document.getElementById("resultName");
+        const resultScore = document.getElementById("resultScore");
+        const resultRank = document.getElementById("resultRank");
+        const errorMessage = document.getElementById("errorMessage");
+
+        submitButton.addEventListener("click", showResults);
+
+        function showResults() {
+            const inputIndex = indexInput.value;
+            const result = resultsData.find(data => data.index === inputIndex);
+
+            if (result) {
+                resultIndex.textContent = result.index;
+                resultName.textContent = result.name;
+                resultScore.textContent = result.score;
+                resultRank.textContent = result.rank;
+                resultContainer.style.display = "block";
+                errorMessage.style.display = "none";
+            } else {
+                resultContainer.style.display = "none";
+                errorMessage.style.display = "block";
+            }
+        }
+  
   function no(){
     alert("Now you are in Home Page")
   }
