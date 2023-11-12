@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        #inputBox {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #memberName {
+            width: 200px;
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #searchButton {
+            background-color: #0a0a23;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #searchButton:hover {
+            background-color: #0074a2;
+        }
+
+        #marksChartContainer {
+            display: none;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        #resultBox {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="inputBox">
+        <h1 id="newh1">Maths Results</h1>
+        <label for="memberName">Index:</label>
+        <input type="text" id="memberIndex" placeholder="Enter your index">
+        <br>
+        <br>
+
+        <button id="searchButton" onclick="search()">Search</button>
+    </div>
+
+    <div id="marksChartContainer">
+        <canvas id="marksChart"></canvas>
+    </div>
+
+    <div id="resultBox"></div>
+
+    <script>
+        var memberData = [
+            { index: 23002, name: "S.Saran", marks: [0, 26, ] },
+            { index: 23003, name: "S.Subeetshan", marks: [48, 55, ]},
+            { index: 23004, name: "K. Birajith", marks: [42, 67, ] },
+            { index: 23005, name: "M.Thusanth", marks: [0, 25, ] },
+            { index: 23006, name: "L.Jadsiha ", marks: [37, 59, ] },
+            { index: 23007, name: "S.Kamsan ", marks: [48, 39, ] },
+            { index: 23008, name: "J.Sarujan", marks: [18, 20, ] },
+            { index: 23009, name: "AM.Hamees", marks: [44, 52, ] },
+            { index: 23010, name: "S.Sarajana", marks: [68, 0, ] },
+            { index: 23011, name: "F.Ajey Abishake", marks: [47, 54, ] },
+            { index: 23012, name: "M.S.M.Shazan", marks: [46, 52, ] },
+            { index: 23013, name: "S.Dilakshan", marks: [36, 67, ] },
+            { index: 23014, name: "J.Thadshakan ", marks: [48, 27, ] },
+            { index: 23015, name: "G.Lakshika", marks: [55, 40, ] },
+            { index: 23017, name: "U.Saturshana", marks: [48, 58, ] },
+            { index: 23018, name: "Kr.Hasni Zihar", marks: [56, 26, ] },
+            { index: 23019, name: "D.Demekshan", marks: [52, 26, ] },
+            { index: 23020, name: "R.Sajiv", marks: [29, 25, ] },
+        ];
+
+        var memberNames = [];
+        var memberMarks = [];
+        var examLabels = ["Quiz 1", "Quiz 2", "Quiz 3", "Quiz 4", "Quiz 5"];
+
+        var ctx = document.getElementById('marksChart').getContext('2d');
+        var marksChart;
+
+        function search() {
+            var memberIndexInput = document.getElementById('memberIndex');
+            var index = parseInt(memberIndexInput.value.trim());
+
+            // Validate input
+            if (isNaN(index)) {
+                alert('Please enter a valid index number.');
+                return;
+            }
+
+            // Check if the entered index exists in the data
+            var member = memberData.find(member => member.index === index);
+
+            if (!member) {
+                alert('Please enter a valid index number.');
+                return;
+            }
+
+            // Update the data arrays
+            memberNames = [member.name];
+            memberMarks = [member.marks];
+
+            // Update the chart
+            updateChart();
+
+            // Show the result box
+            showResult(member);
+
+            // Clear input field
+            memberIndexInput.value = '';
+
+            // Show the chart container
+            document.getElementById('marksChartContainer').style.display = 'block';
+        }
+
+        function updateChart() {
+            // Destroy the existing chart to update data
+            if (marksChart) {
+                marksChart.destroy();
+            }
+
+            marksChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: examLabels,
+                    datasets: memberNames.map((member, index) => ({
+                        label: member,
+                        data: memberMarks[index],
+                        borderColor: getRandomColor(),
+                        backgroundColor: 'rgba(0, 123, 255, 0.2)',
+                        pointBackgroundColor: getRandomColor(),
+                        pointRadius: 5,
+                        pointHoverRadius: 8,
+                        borderWidth: 2
+                    }))
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        function showResult(member) {
+            var resultBox = document.getElementById('resultBox');
+            resultBox.innerHTML = `<p>Name: ${member.name}</p>`;
+            resultBox.innerHTML += `<p>Last Exam Marks: ${member.marks[member.marks.length - 1]}</p>`;
+            resultBox.innerHTML += `<p>Rank: ${getRank(member)}</p>`;
+        }
+
+        function getRank(member) {
+            // Calculate rank based on the marks of the last exam
+            var lastExamMarks = member.marks[member.marks.length - 1];
+            var sortedMembers = memberData.slice().sort((a, b) => b.marks[b.marks.length - 1] - a.marks[a.marks.length - 1]);
+            var rank = sortedMembers.findIndex(m => m.index === member.index) + 1;
+
+            return rank;
+        }
+
+        // Function to generate a random color
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
