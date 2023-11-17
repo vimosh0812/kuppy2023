@@ -24,6 +24,18 @@
         </div>
       </nav>
   </header>
+<!--  Quiz block starting-->
+  <br>
+  <div class="instructions"> 
+  <h1 id="quizh1">MA1033 |  MECHANICS - QUIZ 01</h1>
+      <hr>
+      <div id="timer">Quiz starts in: 0:00:00</div>
+      <br>
+      <a id="quizLink" href="http://form-timer.com/start/c84edfb7" target="_blank"><button id="quizFrame" disabled>START</button></a>
+  </div>
+<!--   Quiz block ending -->
+
+  
   <br>
   <h1 class="heading">RESULTS</h1>
   <br>
@@ -172,6 +184,33 @@
   function no(){
     alert("Now you are in Home Page")
   }
+  // Quiz block start
+  function formatTime(hours, minutes, seconds) {
+    return `${hours}:${minutes}:${seconds}`;
+  }
+
+  // Function to update the timer
+  function updateTimer() {
+    const currentTime = new Date();
+    const quizStartTime = new Date("2023-11-17T17:40:00"); // Specify your quiz start time here
+
+    if (currentTime < quizStartTime) {
+      const timeDifference = new Date(quizStartTime - currentTime);
+      const hours = timeDifference.getUTCHours();
+      const minutes = timeDifference.getUTCMinutes();
+      const seconds = timeDifference.getUTCSeconds();
+
+      document.getElementById("timer").textContent = "Quiz starts in: " + formatTime(hours, minutes, seconds);
+    } else {
+      document.getElementById("timer").textContent = "Click the button below to start the quiz ";
+      document.getElementById("quizFrame").disabled = false;
+      document.getElementById("quizLink").setAttribute("href", "http://form-timer.com/start/c84edfb7");
+    }
+  }
+
+  // Update the timer every second
+  setInterval(updateTimer, 1000);
+  // Quiz block end
 </script>
 </body>
 </html>
