@@ -25,10 +25,10 @@
       </nav>
   </header>
   <br>
-<!--   <h1 class="heading">RESULTS</h1>
+  <h1 class="heading">RESULTS</h1>
   <br>
   <div class="container">
-    <h1 id="newh1">Maths Results</h1>
+    <h1 id="newh1">Mechanics Results</h1>
     <input type="text" id="indexInput" placeholder="Enter index number">
     <button id="submitButton">Submit</button>
   <div id="result">
@@ -38,7 +38,7 @@
         <p><strong>Rank:</strong> <span id="resultRank"></span></p>
   </div>
     <div id="errorMessage">Enter the valid index number</div>        
-  </div> -->
+  </div>
   <div class="time-table group">
     <h1 class="heading">
         Time Table
@@ -58,10 +58,10 @@
     <div class="block tuesday fl">
         <h2 class="title">TUESDAY</h2>
         <ul class="cont">
-          <li class="time">10.00 - 12.00</li>
+          <li class="time">10.00 - 11.30</li>
+          <li class="sub">(MATERIAL)</li>
+          <li class="time">11.30 - 13.00</li>
           <li class="sub">(FLUID)</li>
-          <li class="time">12.00 - 13.00</li>
-          <li class="quiz">(QUIZ)</li>
         </ul>
 
     </div>
@@ -79,9 +79,9 @@
     <div class="block thursday fl">
         <h2 class="title">THURSDAY</h2>
         <ul class="cont">
-          <li class="time">10.00 - 11.00</li>
-          <li class="sub">(MATERIAL)</li>
-          <li class="time">11.00 - 13.00</li>
+          <li class="time">10.00 - 11.30</li>
+          <li class="sub">(MATHA)</li>
+          <li class="time">11.30 - 13.00</li>
           <li class="sub">(ELECTRICAL)</li>
         </ul>
         
@@ -120,54 +120,54 @@
 
 </footer>
 <script>
-    // const resultsData = [
-    //         { index: "23002", name: "S.Saran", score: "AB", rank: "-" },
-    //         { index: "23003", name: "S.Subeetshan", score: "67", rank: "05" },
-    //         { index: "23004", name: "K. Birajith", score: "62", rank: "12" },
-    //         { index: "23005", name: "M.Thusanth", score: "AB", rank: "-" },
-    //         { index: "23006", name: "L.Jadsiha ", score: "57", rank: "13" },
-    //         { index: "23007", name: "S.Kamsan ", score: "67", rank: "05" },
-    //         { index: "23008", name: "J.Sarujan", score: "40", rank: "16" },
-    //         { index: "23009", name: "AM.Hamees", score: "63", rank: "11" },
-    //         { index: "23010", name: "S.Sarajana", score: "85", rank: "01" },
-    //         { index: "23011", name: "F.Ajey Abishake", score: "66", rank: "09" },
-    //         { index: "23012", name: "M.S.M.Shazan", score: "65", rank: "10" },
-    //         { index: "23013", name: "S.Dilakshan", score: "56", rank: "14" },
-    //         { index: "23014", name: "J.Thadshakan ", score: "67", rank: "05" },
-    //         { index: "23015", name: "G.Lakshika", score: "73", rank: "03" },
-    //         { index: "23017", name: "U.Saturshana", score: "67", rank: "05" },
-    //         { index: "23018", name: "Kr.Hasni Zihar", score: "74", rank: "02" },
-    //         { index: "23019", name: "D.Demekshan", score: "71", rank: "04" },
-    //         { index: "23020", name: "R.Sajiv", score: "50", rank: "15" },
-    //     ];
+    const resultsData = [
+            { index: "23002", name: "S.Saran", score: "", rank: "" },
+            { index: "23003", name: "S.Subeetshan", score: "", rank: "" },
+            { index: "23004", name: "K. Birajith", score: "", rank: "" },
+            { index: "23005", name: "M.Thusanth", score: "", rank: "" },
+            { index: "23006", name: "L.Jadsiha ", score: "", rank: "" },
+            { index: "23007", name: "S.Kamsan ", score: "", rank: "" },
+            { index: "23008", name: "J.Sarujan", score: "", rank: "" },
+            { index: "23009", name: "AM.Hamees", score: "", rank: "" },
+            { index: "23010", name: "S.Sarajana", score: "", rank: "" },
+            { index: "23011", name: "F.Ajey Abishake", score: "", rank: "" },
+            { index: "23012", name: "M.S.M.Shazan", score: "", rank: "" },
+            { index: "23013", name: "S.Dilakshan", score: "", rank: "" },
+            { index: "23014", name: "J.Thadshakan ", score: "", rank: "" },
+            { index: "23015", name: "G.Lakshika", score: "", rank: "" },
+            { index: "23017", name: "U.Saturshana", score: "", rank: "" },
+            { index: "23018", name: "Kr.Hasni Zihar", score: "", rank: "" },
+            { index: "23019", name: "D.Demekshan", score: "", rank: "" },
+            { index: "23020", name: "R.Sajiv", score: "", rank: "" },
+        ];
 
-    //     const indexInput = document.getElementById("indexInput");
-    //     const submitButton = document.getElementById("submitButton");
-    //     const resultContainer = document.getElementById("result");
-    //     const resultIndex = document.getElementById("resultIndex");
-    //     const resultName = document.getElementById("resultName");
-    //     const resultScore = document.getElementById("resultScore");
-    //     const resultRank = document.getElementById("resultRank");
-    //     const errorMessage = document.getElementById("errorMessage");
+        const indexInput = document.getElementById("indexInput");
+        const submitButton = document.getElementById("submitButton");
+        const resultContainer = document.getElementById("result");
+        const resultIndex = document.getElementById("resultIndex");
+        const resultName = document.getElementById("resultName");
+        const resultScore = document.getElementById("resultScore");
+        const resultRank = document.getElementById("resultRank");
+        const errorMessage = document.getElementById("errorMessage");
 
-    //     submitButton.addEventListener("click", showResults);
+        submitButton.addEventListener("click", showResults);
 
-    //     function showResults() {
-    //         const inputIndex = indexInput.value;
-    //         const result = resultsData.find(data => data.index === inputIndex);
+        function showResults() {
+            const inputIndex = indexInput.value;
+            const result = resultsData.find(data => data.index === inputIndex);
 
-    //         if (result) {
-    //             resultIndex.textContent = result.index;
-    //             resultName.textContent = result.name;
-    //             resultScore.textContent = result.score;
-    //             resultRank.textContent = result.rank;
-    //             resultContainer.style.display = "block";
-    //             errorMessage.style.display = "none";
-    //         } else {
-    //             resultContainer.style.display = "none";
-    //             errorMessage.style.display = "block";
-    //         }
-    //     }
+            if (result) {
+                resultIndex.textContent = result.index;
+                resultName.textContent = result.name;
+                resultScore.textContent = result.score;
+                resultRank.textContent = result.rank;
+                resultContainer.style.display = "block";
+                errorMessage.style.display = "none";
+            } else {
+                resultContainer.style.display = "none";
+                errorMessage.style.display = "block";
+            }
+        }
   
   function no(){
     alert("Now you are in Home Page")
