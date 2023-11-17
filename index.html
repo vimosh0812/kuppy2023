@@ -133,54 +133,54 @@
 
 </footer>
 <script>
-    const resultsData = [
-            { index: "23002", name: "S.Saran", score: "", rank: "" },
-            { index: "23003", name: "S.Subeetshan", score: "", rank: "" },
-            { index: "23004", name: "K. Birajith", score: "", rank: "" },
-            { index: "23005", name: "M.Thusanth", score: "", rank: "" },
-            { index: "23006", name: "L.Jadsiha ", score: "", rank: "" },
-            { index: "23007", name: "S.Kamsan ", score: "", rank: "" },
-            { index: "23008", name: "J.Sarujan", score: "", rank: "" },
-            { index: "23009", name: "AM.Hamees", score: "", rank: "" },
-            { index: "23010", name: "S.Sarajana", score: "", rank: "" },
-            { index: "23011", name: "F.Ajey Abishake", score: "", rank: "" },
-            { index: "23012", name: "M.S.M.Shazan", score: "", rank: "" },
-            { index: "23013", name: "S.Dilakshan", score: "", rank: "" },
-            { index: "23014", name: "J.Thadshakan ", score: "", rank: "" },
-            { index: "23015", name: "G.Lakshika", score: "", rank: "" },
-            { index: "23017", name: "U.Saturshana", score: "", rank: "" },
-            { index: "23018", name: "Kr.Hasni Zihar", score: "", rank: "" },
-            { index: "23019", name: "D.Demekshan", score: "", rank: "" },
-            { index: "23020", name: "R.Sajiv", score: "", rank: "" },
-        ];
+    // const resultsData = [
+    //         { index: "23002", name: "S.Saran", score: "", rank: "" },
+    //         { index: "23003", name: "S.Subeetshan", score: "", rank: "" },
+    //         { index: "23004", name: "K. Birajith", score: "", rank: "" },
+    //         { index: "23005", name: "M.Thusanth", score: "", rank: "" },
+    //         { index: "23006", name: "L.Jadsiha ", score: "", rank: "" },
+    //         { index: "23007", name: "S.Kamsan ", score: "", rank: "" },
+    //         { index: "23008", name: "J.Sarujan", score: "", rank: "" },
+    //         { index: "23009", name: "AM.Hamees", score: "", rank: "" },
+    //         { index: "23010", name: "S.Sarajana", score: "", rank: "" },
+    //         { index: "23011", name: "F.Ajey Abishake", score: "", rank: "" },
+    //         { index: "23012", name: "M.S.M.Shazan", score: "", rank: "" },
+    //         { index: "23013", name: "S.Dilakshan", score: "", rank: "" },
+    //         { index: "23014", name: "J.Thadshakan ", score: "", rank: "" },
+    //         { index: "23015", name: "G.Lakshika", score: "", rank: "" },
+    //         { index: "23017", name: "U.Saturshana", score: "", rank: "" },
+    //         { index: "23018", name: "Kr.Hasni Zihar", score: "", rank: "" },
+    //         { index: "23019", name: "D.Demekshan", score: "", rank: "" },
+    //         { index: "23020", name: "R.Sajiv", score: "", rank: "" },
+    //     ];
 
-        const indexInput = document.getElementById("indexInput");
-        const submitButton = document.getElementById("submitButton");
-        const resultContainer = document.getElementById("result");
-        const resultIndex = document.getElementById("resultIndex");
-        const resultName = document.getElementById("resultName");
-        const resultScore = document.getElementById("resultScore");
-        const resultRank = document.getElementById("resultRank");
-        const errorMessage = document.getElementById("errorMessage");
+    //     const indexInput = document.getElementById("indexInput");
+    //     const submitButton = document.getElementById("submitButton");
+    //     const resultContainer = document.getElementById("result");
+    //     const resultIndex = document.getElementById("resultIndex");
+    //     const resultName = document.getElementById("resultName");
+    //     const resultScore = document.getElementById("resultScore");
+    //     const resultRank = document.getElementById("resultRank");
+    //     const errorMessage = document.getElementById("errorMessage");
 
-        submitButton.addEventListener("click", showResults);
+    //     submitButton.addEventListener("click", showResults);
 
-        function showResults() {
-            const inputIndex = indexInput.value;
-            const result = resultsData.find(data => data.index === inputIndex);
+    //     function showResults() {
+    //         const inputIndex = indexInput.value;
+    //         const result = resultsData.find(data => data.index === inputIndex);
 
-            if (result) {
-                resultIndex.textContent = result.index;
-                resultName.textContent = result.name;
-                resultScore.textContent = result.score;
-                resultRank.textContent = result.rank;
-                resultContainer.style.display = "block";
-                errorMessage.style.display = "none";
-            } else {
-                resultContainer.style.display = "none";
-                errorMessage.style.display = "block";
-            }
-        }
+    //         if (result) {
+    //             resultIndex.textContent = result.index;
+    //             resultName.textContent = result.name;
+    //             resultScore.textContent = result.score;
+    //             resultRank.textContent = result.rank;
+    //             resultContainer.style.display = "block";
+    //             errorMessage.style.display = "none";
+    //         } else {
+    //             resultContainer.style.display = "none";
+    //             errorMessage.style.display = "block";
+    //         }
+    //     }
   
   function no(){
     alert("Now you are in Home Page")
