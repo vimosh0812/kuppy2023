@@ -25,18 +25,18 @@
       </nav>
   </header>
 <!--  Quiz block starting-->
-  <br>
+<!--   <br>
   <div class="instructions"> 
   <h1 id="quizh1">MA1033 |  MECHANICS - QUIZ 01</h1>
       <hr>
       <div id="timer">Quiz starts in: 0:00:00</div>
       <br>
       <a id="quizLink" href="http://form-timer.com/start/c84edfb7" target="_blank"><button id="quizFrame" disabled>START</button></a>
-  </div>
+  </div> -->
 <!--   Quiz block ending -->
 
 <!-- results start -->
-<!--   <br>
+  <br>
   <h1 class="heading">RESULTS</h1>
   <br>
   <div class="container">
@@ -50,7 +50,7 @@
         <p><strong>Rank:</strong> <span id="resultRank"></span></p>
   </div>
     <div id="errorMessage">Enter the valid index number</div>        
-  </div> -->
+  </div>
 <!--   results end -->
   <div class="time-table group">
     <h1 class="heading">
@@ -133,84 +133,84 @@
 
 </footer>
 <script>
-    // const resultsData = [
-    //         { index: "23002", name: "S.Saran", score: "", rank: "" },
-    //         { index: "23003", name: "S.Subeetshan", score: "", rank: "" },
-    //         { index: "23004", name: "K. Birajith", score: "", rank: "" },
-    //         { index: "23005", name: "M.Thusanth", score: "", rank: "" },
-    //         { index: "23006", name: "L.Jadsiha ", score: "", rank: "" },
-    //         { index: "23007", name: "S.Kamsan ", score: "", rank: "" },
-    //         { index: "23008", name: "J.Sarujan", score: "", rank: "" },
-    //         { index: "23009", name: "AM.Hamees", score: "", rank: "" },
-    //         { index: "23010", name: "S.Sarajana", score: "", rank: "" },
-    //         { index: "23011", name: "F.Ajey Abishake", score: "", rank: "" },
-    //         { index: "23012", name: "M.S.M.Shazan", score: "", rank: "" },
-    //         { index: "23013", name: "S.Dilakshan", score: "", rank: "" },
-    //         { index: "23014", name: "J.Thadshakan ", score: "", rank: "" },
-    //         { index: "23015", name: "G.Lakshika", score: "", rank: "" },
-    //         { index: "23017", name: "U.Saturshana", score: "", rank: "" },
-    //         { index: "23018", name: "Kr.Hasni Zihar", score: "", rank: "" },
-    //         { index: "23019", name: "D.Demekshan", score: "", rank: "" },
-    //         { index: "23020", name: "R.Sajiv", score: "", rank: "" },
-    //     ];
+    const resultsData = [
+            { index: "23002", name: "S.Saran", score: "20", rank: "16" },
+            { index: "23003", name: "S.Subeetshan", score: "40", rank: "09" },
+            { index: "23004", name: "K. Birajith", score: "33", rank: "13" },
+            { index: "23005", name: "M.Thusanth", score: "-", rank: "-" }, //AB
+            { index: "23006", name: "L.Jadsiha ", score: "68", rank: "01" },
+            { index: "23007", name: "S.Kamsan ", score: "46", rank: "07" },
+            { index: "23008", name: "J.Sarujan", score: "-", rank: "-" },//AB
+            { index: "23009", name: "AM.Hamees", score: "48", rank: "05" },
+            { index: "23010", name: "S.Sarajana", score: "60", rank: "03" },
+            { index: "23011", name: "F.Ajey Abishake", score: "35", rank: "11" },
+            { index: "23012", name: "M.S.M.Shazan", score: "61", rank: "02" },
+            { index: "23013", name: "S.Dilakshan", score: "26", rank: "15" },
+            { index: "23014", name: "J.Thadshakan ", score: "40", rank: "08" },
+            { index: "23015", name: "G.Lakshika", score: "53", rank: "04" },
+            { index: "23017", name: "U.Saturshana", score: "33", rank: "12" },
+            { index: "23018", name: "Kr.Hasni Zihar", score: "39", rank: "10" },
+            { index: "23019", name: "D.Demekshan", score: "32", rank: "14" },
+            { index: "23020", name: "R.Sajiv", score: "46", rank: "06" },
+        ];
 
-    //     const indexInput = document.getElementById("indexInput");
-    //     const submitButton = document.getElementById("submitButton");
-    //     const resultContainer = document.getElementById("result");
-    //     const resultIndex = document.getElementById("resultIndex");
-    //     const resultName = document.getElementById("resultName");
-    //     const resultScore = document.getElementById("resultScore");
-    //     const resultRank = document.getElementById("resultRank");
-    //     const errorMessage = document.getElementById("errorMessage");
+        const indexInput = document.getElementById("indexInput");
+        const submitButton = document.getElementById("submitButton");
+        const resultContainer = document.getElementById("result");
+        const resultIndex = document.getElementById("resultIndex");
+        const resultName = document.getElementById("resultName");
+        const resultScore = document.getElementById("resultScore");
+        const resultRank = document.getElementById("resultRank");
+        const errorMessage = document.getElementById("errorMessage");
 
-    //     submitButton.addEventListener("click", showResults);
+        submitButton.addEventListener("click", showResults);
 
-    //     function showResults() {
-    //         const inputIndex = indexInput.value;
-    //         const result = resultsData.find(data => data.index === inputIndex);
+        function showResults() {
+            const inputIndex = indexInput.value;
+            const result = resultsData.find(data => data.index === inputIndex);
 
-    //         if (result) {
-    //             resultIndex.textContent = result.index;
-    //             resultName.textContent = result.name;
-    //             resultScore.textContent = result.score;
-    //             resultRank.textContent = result.rank;
-    //             resultContainer.style.display = "block";
-    //             errorMessage.style.display = "none";
-    //         } else {
-    //             resultContainer.style.display = "none";
-    //             errorMessage.style.display = "block";
-    //         }
-    //     }
+            if (result) {
+                resultIndex.textContent = result.index;
+                resultName.textContent = result.name;
+                resultScore.textContent = result.score;
+                resultRank.textContent = result.rank;
+                resultContainer.style.display = "block";
+                errorMessage.style.display = "none";
+            } else {
+                resultContainer.style.display = "none";
+                errorMessage.style.display = "block";
+            }
+        }
   
   function no(){
     alert("Now you are in Home Page")
   }
-  // Quiz block start
-  function formatTime(hours, minutes, seconds) {
-    return `${hours}:${minutes}:${seconds}`;
-  }
+  // // Quiz block start
+  // function formatTime(hours, minutes, seconds) {
+  //   return `${hours}:${minutes}:${seconds}`;
+  // }
 
-  // Function to update the timer
-  function updateTimer() {
-    const currentTime = new Date();
-    const quizStartTime = new Date("2023-11-17T19:00:00"); // Specify your quiz start time here
+  // // Function to update the timer
+  // function updateTimer() {
+  //   const currentTime = new Date();
+  //   const quizStartTime = new Date("2023-11-17T19:00:00"); // Specify your quiz start time here
 
-    if (currentTime < quizStartTime) {
-      const timeDifference = new Date(quizStartTime - currentTime);
-      const hours = timeDifference.getUTCHours();
-      const minutes = timeDifference.getUTCMinutes();
-      const seconds = timeDifference.getUTCSeconds();
+  //   if (currentTime < quizStartTime) {
+  //     const timeDifference = new Date(quizStartTime - currentTime);
+  //     const hours = timeDifference.getUTCHours();
+  //     const minutes = timeDifference.getUTCMinutes();
+  //     const seconds = timeDifference.getUTCSeconds();
 
-      document.getElementById("timer").textContent = "Quiz starts in: " + formatTime(hours, minutes, seconds);
-    } else {
-      document.getElementById("timer").textContent = "Click the button below to start the quiz ";
-      document.getElementById("quizFrame").disabled = false;
-      document.getElementById("quizLink").setAttribute("href", "http://form-timer.com/start/c84edfb7");
-    }
-  }
+  //     document.getElementById("timer").textContent = "Quiz starts in: " + formatTime(hours, minutes, seconds);
+  //   } else {
+  //     document.getElementById("timer").textContent = "Click the button below to start the quiz ";
+  //     document.getElementById("quizFrame").disabled = false;
+  //     document.getElementById("quizLink").setAttribute("href", "http://form-timer.com/start/c84edfb7");
+  //   }
+  // }
 
-  // Update the timer every second
-  setInterval(updateTimer, 1000);
+  // // Update the timer every second
+  // setInterval(updateTimer, 1000);
   // Quiz block end
 </script>
 </body>
