@@ -223,7 +223,7 @@ button {
   border: none;
   cursor: pointer;
 }
-#submit {
+#submitButton {
  width: 100%;
 }
 #quizFrame {
