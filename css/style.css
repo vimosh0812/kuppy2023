@@ -272,3 +272,24 @@ button:hover {
   text-align: center;
 }
 /* new */
+/*  INSTRUCTIONS START*/
+#quizh1 {
+    color: #333;
+}
+
+#quizp {
+    font-size: 18px;
+}
+
+.instructions {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fff1;
+    padding: 20px;
+}
+/* INSTRUCTIONS END */
